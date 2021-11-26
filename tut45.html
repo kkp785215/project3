@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid + Media Queries</title>
+    <style>
+        body {
+            margin: 0px;
+            max-width: 1400px;
+            padding: 0px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .container {
+            display: grid;
+            grid-template-areas:
+                'navbar navbar navbar navbar'
+                'section section section aside'
+                'footer footer footer footer'
+        }
+
+        /* Navbar */
+        #navbar {
+            grid-area: navbar;
+            padding: 23px;
+            background-color: #a73252;
+            color: white;
+        }
+
+        .menu-item {
+            margin: 0px 12px;
+        }
+
+        /* Section */
+        #section {
+            display: flex;
+            flex-wrap: wrap;
+            grid-area: section;
+            margin: 5px;
+            padding: 8px;
+            border: 2px solid black;
+        }
+
+        .post {
+            display: flex;
+            flex-grow: 1;
+            flex-direction: column;
+            justify-content: center;
+            /* border: 2px solid red; */
+            width: 222px;
+            margin: 4px;
+            padding: 12px;
+        }
+
+        button#read-more {
+            padding: 10px 13px;
+            border: none;
+            background-color: blue;
+            color: white;
+            border-radius: 4px;
+        }
+
+        /* Aside */
+        #aside {
+            grid-area: aside;
+            margin: 5px;
+            padding: 19.92px;
+            border: 2px solid black;
+        }
+
+
+        /* Footer */
+        footer {
+            grid-area: footer;
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 23px;
+        }
+
+        footer a {
+            text-decoration: none;
+            color: grey;
+        }
+
+        footer a:hover {
+            color: #a277bd;
+        }
+
+
+        /* Utility Classes */
+        .h-primary {
+            color: blue;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* Media Quries For Responsive in Phone */
+        @media only screen and (max-width: 425px) {
+            #navbar {
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            .container {
+                display: grid;
+                grid-template-areas:
+                    'navbar navbar navbar navbar'
+                    'section section section section'
+                    'aside aside aside aside'
+                    'footer footer footer footer'
+            }
+        }
+
+        /* Media Quries For Responsive in Tablet */
+        @media (min-width: 426px) and (max-width: 768px) {
+            .container {
+                display: grid;
+                grid-template-areas:
+                    'navbar navbar navbar navbar'
+                    'section section section section'
+                    'aside aside aside aside'
+                    'footer footer footer footer'
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <nav id="navbar">
+            <span class="menu-item">Home</span>
+            <span class="menu-item">Services</span>
+            <span class="menu-item">About</span>
+            <span class="menu-item">Contact Us</span>
+        </nav>
+        <section id="section">
+            <div class="post">
+                <h1 class="h-primary">This is my first blog post</h1>
+                <img src="bg.jpg" alt="">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod cumque rerum hic eaque corporis quos
+                    voluptatum vero magni? Numquam, nostrum!</p>
+                <div class="read-more">
+                    <button id="read-more" class="btn">Read More</button>
+                </div>
+            </div>
+            <div class="post">
+                <h1 class="h-primary">This is my second blog post</h1>
+                <img src="bg.jpg" alt="">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod cumque rerum hic eaque corporis quos
+                    voluptatum vero magni? Numquam, nostrum!</p>
+                <div class="read-more">
+                    <button id="read-more" class="btn">Read More</button>
+                </div>
+            </div>
+            <div class="post">
+                <h1 class="h-primary">This is my third blog post</h1>
+                <img src="bg.jpg" alt="">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod cumque rerum hic eaque corporis quos
+                    voluptatum vero magni? Numquam, nostrum!</p>
+                <div class="read-more">
+                    <button id="read-more" class="btn">Read More</button>
+                </div>
+            </div>
+            <div class="post">
+                <h1 class="h-primary">This is my forth blog post</h1>
+                <img src="bg.jpg" alt="">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod cumque rerum hic eaque corporis quos
+                    voluptatum vero magni? Numquam, nostrum!</p>
+                <div class="read-more">
+                    <button id="read-more" class="btn">Read More</button>
+                </div>
+            </div>
+            <div class="post">
+                <h1 class="h-primary">This is my fifth blog post</h1>
+                <img src="bg.jpg" alt="">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod cumque rerum hic eaque corporis quos
+                    voluptatum vero magni? Numquam, nostrum!</p>
+                <div class="read-more">
+                    <button id="read-more" class="btn">Read More</button>
+                </div>
+            </div>
+            <div class="post">
+                <h1 class="h-primary">This is my sixth blog post</h1>
+                <img src="bg.jpg" alt="">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod cumque rerum hic eaque corporis quos
+                    voluptatum vero magni? Numquam, nostrum!</p>
+                <div class="read-more">
+                    <button id="read-more" class="btn">Read More</button>
+                </div>
+            </div>
+            <div class="post">
+                <h1 class="h-primary">This is my seventh blog post</h1>
+                <img src="bg.jpg" alt="">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod cumque rerum hic eaque corporis quos
+                    voluptatum vero magni? Numquam, nostrum!</p>
+                <div class="read-more">
+                    <button id="read-more" class="btn">Read More</button>
+                </div>
+            </div>
+            <div class="post">
+                <h1 class="h-primary">This is my eighth blog post</h1>
+                <img src="bg.jpg" alt="">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod cumque rerum hic eaque corporis quos
+                    voluptatum vero magni? Numquam, nostrum!</p>
+                <div class="read-more">
+                    <button id="read-more" class="btn">Read More</button>
+                </div>
+            </div>
+            <div class="post">
+                <h1 class="h-primary">This is my ninth blog post</h1>
+                <img src="bg.jpg" alt="">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod cumque rerum hic eaque corporis quos
+                    voluptatum vero magni? Numquam, nostrum!</p>
+                <div class="read-more">
+                    <button id="read-more" class="btn">Read More</button>
+                </div>
+            </div>
+        </section>
+        <aside id="aside">
+            <h1 class="h-primary">Latest Post</h1>
+            <p>This is my fist blog</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit sapiente iste voluptatum fugiat aspernatur
+                tempora quam hic. Quibusdam quasi dignissimos odit! Excepturi dolor inventore ab dicta vel, asperiores
+                doloribus optio possimus expedita id a quisquam unde eius reprehenderit, eum consectetur atque iusto
+                nemo molestiae eos. Sunt unde, quo odio aspernatur assumenda culpa facere numquam quidem rem atque
+                cumque explicabo quos consequatur iste. Ab nisi necessitatibus porro ex, itaque quo quasi nostrum
+                expedita aperiam temporibus et sit, rem reiciendis, ea placeat ullam soluta minima provident repellendus
+                natus illo! Aut expedita iure, optio officiis deleniti non soluta numquam consequatur eligendi ipsum
+                excepturi itaque ullam, quasi natus nesciunt fuga quibusdam necessitatibus odio sunt reprehenderit?</p>
+        </aside>
+        <footer>
+            Copyright <a href="#">Allapkstore.com</a> 2021 Allright Reserved!
+        </footer>
+    </div>
+</body>
+
+</html>
